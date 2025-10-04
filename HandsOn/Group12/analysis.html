@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title> Analysis of the Dataset </title>
+  <title>Analysis of the Dataset</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;max-width:960px;margin:40px auto;padding:0 20px;line-height:1.5}
@@ -16,34 +16,49 @@
   </style>
 </head>
 <body>
-    <h1> Resource Naming Strategy </h1>
 
-    <ul>
-      <li>Since the dataset is quite small, <strong>hash URIs</strong> will be used (see Sauermann &amp; Cyganiak, 2008).</li>
-      <li>The URI domain to be used is <code>https://iamabsa.github.io/BECA/chargingstation##12345
-/</code>. This domain is chosen because it is a governemental and it follows the data publisher’s identity.
-We could've also used the governemental one but since the transformed RDF data and ontology can be published online, it is better to use "our own".</li>
-      <li>A subfolder <code>BECA</code> will be added to the domain to indicate that the ontology model and data are related to the BECA Example
-         (because we are truthully using our teacher's example as a guideline as you probably already noticed).</li>
-    </ul>
+<h1>Resource Naming Strategy</h1>
 
-    <h3>Ontology model classes</h3>
-    <p>Classes in the ontology will follow the pattern:</p>
-    <pre><code>https://iamabsa.github.io/BECA/ontology/<ontologyName>#<className>;</code></pre>
-    <p>Example: The charging station class :</p>
+<div class="ds">
+  <h2>Purpose</h2>
+  <p>This document explains the URI and resource naming strategy for the BECA dataset. 
+     Since the dataset is quite small, <strong>hash URIs</strong> will be used (see Sauermann &amp; Cyganiak, 2008).
+  </p>
+  <p>The URI domain to be used is: 
+     <code>https://iamabsa.github.io/BECA/chargingstation##12345/</code>. 
+     This domain is governmental and follows the data publisher’s identity. A subfolder <code>BECA</code> indicates that the ontology and data are related to the BECA Example.
+  </p>
+</div>
+
+<h3>Ontology Model Classes</h3>
+<ul>
+  <li>Classes follow the pattern: 
+    <pre><code>https://iamabsa.github.io/BECA/ontology/&lt;ontologyName&gt;#&lt;className&gt;</code></pre>
+  </li>
+  <li>Example: Charging station class:
     <pre><code>https://iamabsa.github.io/BECA/ontology/ChargingOntology#ChargingStation</code></pre>
+  </li>
+</ul>
 
-    <h3>Ontology model properties</h3>
-    <p>Properties will follow the pattern:</p>
+<h3>Ontology Model Properties</h3>
+<ul>
+  <li>Properties follow the pattern: 
     <pre><code>http://iamabsa.github.io/BECA/ontology/&lt;ontologyName&gt;#&lt;propertyName&gt;</code></pre>
-    <p>Example (the <code>hasPower</code> property of the chargingstation class):</p>
+  </li>
+  <li>Example (the <code>hasPower</code> property of ChargingStation): 
     <pre><code>http://iamabsa.github.io/BECA/ontology/ChargingOntology#hasPower</code></pre>
+  </li>
+</ul>
 
-    <h3>Instances</h3>
-    <p>Instances (the actual data entries (charging stations (parenthesis-ception))) follow the pattern:</p>
-    <pre><code>https://iamabsa.github.io/BECA/resource/<className>#<identifier>;</code></pre>
-    <p>Example (an instance of a dwelling, e.g., in Belgrade):</p>
+<h3>Instances</h3>
+<ul>
+  <li>Instances follow the pattern: 
+    <pre><code>https://iamabsa.github.io/BECA/resource/&lt;className&gt;#&lt;identifier&gt;</code></pre>
+  </li>
+  <li>Example (an instance of a charging station in Vienna): 
     <pre><code>https://iamabsa.github.io/BECA/resource/ChargingStation#WIEN1234</code></pre>
+  </li>
+</ul>
 
 </body>
 </html>
